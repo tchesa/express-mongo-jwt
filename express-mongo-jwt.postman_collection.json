@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "7a5b359e-6df3-426a-891a-1a44df662e2d",
+		"name": "express-mongo-jwt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15948764"
+	},
+	"item": [
+		{
+			"name": "Public route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Cesar Lima\",\n    \"email\": \"cesarolimpio@castleblack.no\",\n    \"password\": \"123123\",\n    \"confirmPassword\": \"123123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/register",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"johnsnow@castleblack.no\",\n    \"password\": \"123123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/auth/user",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/user/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"user",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "6570eb0f14a84e30d2ff7afe"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NzBlYjBmMTRhODRlMzBkMmZmN2FmZSIsImlhdCI6MTcwMTg5OTU0MX0.z2SVZwzLMpwwoLnmAUyQebwdrFXAC2Qs7eC-ogLn-p4",
+			"type": "string"
+		}
+	]
+}
